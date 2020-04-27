@@ -40,7 +40,6 @@ chrome_options.add_argument("--incognito")
 
 Options().page_load_strategy = 'normal'
 driver = webdriver.Chrome(directory,options=Options(),chrome_options=chrome_options)
-driver.minimize_window()
 driver.get('https://namso-gen.com')
 time.sleep(1)
 driver.find_element_by_xpath('//*[@id="main"]/div/div/div[2]/div[1]/form/div[1]/label/input').send_keys('376409')
@@ -55,7 +54,6 @@ CVC=result_textarea[24:28]
 driver.execute_script('''window.open("https://payments.google.com","_blank");''')
 driver.close()
 driver.switch_to_window(driver.window_handles[0])
-driver.minimize_window()
 driver.find_element_by_xpath('//*[@id="identifierId"]').send_keys(email)
 driver.find_element_by_xpath('//*[@id="identifierNext"]/span').click()
 time.sleep(1)
